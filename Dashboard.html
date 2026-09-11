@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smart Expense Tracker</title>
+
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <section class="dashboard-page">
+      <!-- =========================
+             HEADER
+        ========================== -->
+
+      <header class="dashboard-header">
+        <div>
+          <h1>Smart Expense Tracker</h1>
+
+          <p>Track your spending and manage your budget.</p>
+        </div>
+      </header>
+
+      <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+      <main>
+        <!-- =========================
+                 SUMMARY CARDS
+            ========================== -->
+
+        <section class="summary-section">
+          <!-- Monthly Income -->
+
+          <div class="summary-card income-card">
+            <div class="card-icon">💰</div>
+
+            <div>
+              <p>Monthly Income</p>
+
+              <h2 id="displayIncome">₹0</h2>
+            </div>
+          </div>
+
+          <!-- Total Expenses -->
+
+          <div class="summary-card expense-card">
+            <div class="card-icon">💳</div>
+
+            <div>
+              <p>Total Expenses</p>
+
+              <h2 id="displayExpense">₹0</h2>
+            </div>
+          </div>
+
+          <!-- Remaining Balance -->
+
+          <div class="summary-card balance-card">
+            <div class="card-icon">📈</div>
+
+            <div>
+              <p>Remaining Balance</p>
+
+              <h2 id="displayBalance">₹0</h2>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+                 BUDGET WARNING
+            ========================== -->
+
+        <section class="budget-warning">
+          <div class="section-heading">
+            <div>
+              <h2>Budget Status</h2>
+
+              <p>Monitor how much of your income you have used.</p>
+            </div>
+          </div>
+
+          <div class="budget-status-card">
+            <div class="budget-status-icon">💡</div>
+
+            <div>
+              <h3 id="budgetPercentage">0% Used</h3>
+
+              <p id="budgetMessage">Add expenses to see your budget status.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+                 CATEGORY BUDGET LIMITS
+            ========================== -->
+
+        <section class="category-budget-section">
+          <div class="section-heading">
+            <div>
+              <h2>Category Budget Limits</h2>
+
+              <p>Set spending limits for different categories.</p>
+            </div>
+          </div>
+
+          <!-- Budget Limit Form -->
+
+          <form id="budgetLimitForm" class="budget-limit-form">
+            <!-- Category -->
+
+            <div class="form-group">
+              <label for="budgetCategory"> Category </label>
+
+              <select id="budgetCategory" required>
+                <option value="">Select Category</option>
+
+                <option value="Food">Food</option>
+
+                <option value="Travel">Travel</option>
+
+                <option value="Shopping">Shopping</option>
+
+                <option value="Bills">Bills</option>
+
+                <option value="Education">Education</option>
+
+                <option value="Entertainment">Entertainment</option>
+
+                <option value="Health">Health</option>
+
+                <option value="Others">Others</option>
+              </select>
+            </div>
+
+            <!-- Monthly Limit -->
+
+            <div class="form-group">
+              <label for="budgetLimit"> Monthly Limit </label>
+
+              <input
+                type="number"
+                id="budgetLimit"
+                placeholder="₹ Enter limit"
+                min="1"
+                required
+              />
+            </div>
+
+            <!-- Set Limit Button -->
+
+            <button type="submit" class="add-expense-btn">+ Set Limit</button>
+          </form>
+
+          <!-- Budget Cards -->
+
+          <div id="budgetLimitList" class="budget-limit-list"></div>
+        </section>
+
+        <!-- =========================
+                 ADD EXPENSE SECTION
+            ========================== -->
+
+        <section class="expense-section">
+          <div class="section-heading">
+            <div>
+              <h2>Add New Expense</h2>
+
+              <p>Record your daily spending and attach your bill.</p>
+            </div>
+          </div>
+
+          <!-- EXPENSE FORM -->
+
+          <form id="expenseForm" class="expense-form">
+            <!-- Description -->
+
+            <div class="form-group">
+              <label for="description"> Description </label>
+
+              <input
+                type="text"
+                id="description"
+                placeholder="Eg. Grocery shopping"
+                required
+              />
+            </div>
+
+            <!-- Amount -->
+
+            <div class="form-group">
+              <label for="amount"> Amount </label>
+
+              <input
+                type="number"
+                id="amount"
+                placeholder="₹ Enter amount"
+                min="1"
+                required
+              />
+            </div>
+
+            <!-- Category -->
+
+            <div class="form-group">
+              <label for="category"> Category </label>
+
+              <select id="category" required>
+                <option value="">Select Category</option>
+
+                <option value="Food">Food</option>
+
+                <option value="Travel">Travel</option>
+
+                <option value="Shopping">Shopping</option>
+
+                <option value="Bills">Bills</option>
+
+                <option value="Education">Education</option>
+
+                <option value="Entertainment">Entertainment</option>
+
+                <option value="Health">Health</option>
+
+                <option value="Others">Others</option>
+              </select>
+            </div>
+
+            <!-- Date -->
+
+            <div class="form-group">
+              <label for="expenseDate"> Date </label>
+
+              <input type="date" id="expenseDate" required />
+            </div>
+
+            <!-- =========================
+                         BILL / RECEIPT PHOTO
+                    ========================== -->
+
+            <div class="form-group">
+              <label for="billImage"> Bill / Receipt </label>
+
+              <input
+                type="file"
+                id="billImage"
+                accept="image/*"
+                capture="environment"
+              />
+
+              <small> 📷 Take a photo or upload your bill </small>
+            </div>
+
+            <!-- Add Expense Button -->
+
+            <button type="submit" class="add-expense-btn">+ Add Expense</button>
+          </form>
+        </section>
+
+        <!-- =========================
+                 EXPENSE HISTORY
+            ========================== -->
+
+        <section class="table-section">
+          <!-- Heading -->
+
+          <div class="section-heading">
+            <div>
+              <h2>Expense History</h2>
+
+              <p>View and manage your recent transactions.</p>
+            </div>
+          </div>
+
+          <!-- SEARCH & FILTER -->
+
+          <div class="filters">
+            <!-- Search -->
+
+            <input type="text" id="search" placeholder="Search expenses..." />
+
+            <!-- Category Filter -->
+
+            <select id="filterCategory">
+              <option value="All">All Categories</option>
+
+              <option value="Food">Food</option>
+
+              <option value="Travel">Travel</option>
+
+              <option value="Shopping">Shopping</option>
+
+              <option value="Bills">Bills</option>
+
+              <option value="Education">Education</option>
+
+              <option value="Entertainment">Entertainment</option>
+
+              <option value="Health">Health</option>
+
+              <option value="Others">Others</option>
+            </select>
+          </div>
+
+          <!-- EXPENSE TABLE -->
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Description</th>
+
+                  <th>Amount</th>
+
+                  <th>Category</th>
+
+                  <th>Date</th>
+
+                  <th>Bill</th>
+
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="expenseList">
+                <!--
+                                JavaScript will add
+                                expense records here.
+                            -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- =========================
+                 MONTHLY EXPENSE HISTORY
+            ========================== -->
+
+        <section class="history-section">
+          <div class="section-heading">
+            <div>
+              <h2>Monthly Expense History</h2>
+
+              <p>Track your spending month by month.</p>
+            </div>
+          </div>
+
+          <div id="monthlyHistory" class="monthly-history">
+            <!--
+                        JavaScript will generate
+                        monthly expense cards here.
+                    -->
+          </div>
+        </section>
+
+        <!-- =========================
+                 EXPENSE BAR CHART
+            ========================== -->
+
+        <section class="chart-section">
+          <div class="chart-header">
+            <h2>Expense by Category</h2>
+
+            <p>Visual representation of your spending</p>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="expenseChart"></canvas>
+          </div>
+        </section>
+      </main>
+
+      <!-- =========================
+             FOOTER
+        ========================== -->
+
+      <footer>
+        <p>© 2026 Smart Expense Tracker | Manage your money wisely.</p>
+      </footer>
+    </section>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <!-- Chart.js Library -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Your JavaScript -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

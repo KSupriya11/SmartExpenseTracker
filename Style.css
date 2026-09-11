@@ -1,0 +1,1667 @@
+/* =========================================================
+   SMART EXPENSE TRACKER
+   COMPLETE STYLE.CSS
+========================================================= */
+
+/* =========================================================
+   1. RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: #19352f;
+  background: #f4f8f6;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   2. COMMON
+========================================================= */
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   3. LANDING PAGE
+========================================================= */
+
+body:has(a[href="setup.html"]) {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(184, 222, 210, 0.45),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(210, 235, 226, 0.55),
+      transparent 35%
+    ),
+    #f6faf8;
+}
+
+/* Main landing section */
+
+.landing-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+}
+
+/* Landing card */
+
+.landing-container {
+  width: 100%;
+  max-width: 1050px;
+
+  min-height: 560px;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+
+  background: #ffffff;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  box-shadow: 0 25px 70px rgba(18, 60, 52, 0.12);
+
+  border: 1px solid #e4eeea;
+}
+
+/* Landing left side */
+
+.landing-content {
+  padding: 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logo */
+
+.logo {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e5f2ed;
+
+  border-radius: 17px;
+
+  font-size: 28px;
+
+  margin-bottom: 28px;
+}
+
+/* Landing heading */
+
+.landing-content h1 {
+  color: #123c34;
+
+  font-size: 48px;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+}
+
+.landing-content h1 span {
+  color: #2f6f62;
+}
+
+/* Landing description */
+
+.landing-content p {
+  color: #71807b;
+
+  font-size: 17px;
+
+  max-width: 520px;
+
+  margin-bottom: 32px;
+}
+
+/* =========================================================
+   GET STARTED BUTTON
+========================================================= */
+
+.get-started-btn,
+a[href="setup.html"] {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  width: fit-content;
+
+  min-width: 155px;
+
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #123c34;
+
+  color: #ffffff !important;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 0 8px 20px rgba(18, 60, 52, 0.16);
+}
+
+.get-started-btn:hover,
+a[href="setup.html"]:hover {
+  background: #2f6f62;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(18, 60, 52, 0.22);
+}
+
+/* Landing right side */
+
+.landing-image {
+  min-height: 560px;
+
+  background: linear-gradient(145deg, #dceee8, #eef7f3);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+}
+
+/* Decorative shapes */
+
+.landing-image::before {
+  content: "";
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  position: absolute;
+}
+
+.landing-image::after {
+  content: "";
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 28px;
+
+  background: rgba(47, 111, 98, 0.12);
+
+  position: absolute;
+
+  transform: rotate(20deg);
+}
+
+.landing-icon {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 105px;
+}
+
+/* =========================================================
+   4. SETUP PAGE
+========================================================= */
+
+/*
+   This selector also works with your existing setup.html
+   even if it does NOT have a setup-page class.
+*/
+
+body:has(#budgetForm) {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(185, 222, 211, 0.45),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(211, 235, 226, 0.5),
+      transparent 35%
+    ),
+    #f5faf8;
+}
+
+/* Setup page */
+
+.setup-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+}
+
+/* Existing setup body without setup-page class */
+
+body:has(#budgetForm) {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+}
+
+/* Setup card */
+
+.setup-container {
+  width: 100%;
+
+  max-width: 500px;
+
+  background: #ffffff;
+
+  padding: 45px;
+
+  border-radius: 24px;
+
+  border: 1px solid #e2ece8;
+
+  box-shadow: 0 25px 70px rgba(18, 60, 52, 0.13);
+
+  position: relative;
+}
+
+/* Top decorative line */
+
+.setup-container::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 80px;
+
+  height: 4px;
+
+  background: #2f6f62;
+
+  border-radius: 0 0 10px 10px;
+}
+
+/* Setup logo */
+
+.setup-logo {
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #e6f2ee;
+
+  border-radius: 16px;
+
+  font-size: 27px;
+
+  margin-bottom: 22px;
+}
+
+/* Setup title */
+
+.setup-container h1 {
+  color: #123c34;
+
+  font-size: 31px;
+
+  line-height: 1.2;
+
+  margin-bottom: 8px;
+}
+
+/* Setup paragraph */
+
+.setup-container > p,
+.setup-description {
+  color: #74817c;
+
+  font-size: 15px;
+
+  margin-bottom: 28px;
+}
+
+/* Setup form */
+
+.setup-form,
+#budgetForm {
+  width: 100%;
+}
+
+/* Form groups */
+
+.setup-form .form-group,
+#budgetForm .form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+
+.setup-form label,
+#budgetForm label {
+  display: block;
+
+  color: #294039;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+/* Setup inputs */
+
+.setup-form input,
+#budgetForm input {
+  width: 100%;
+
+  height: 52px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d9e5e0;
+
+  border-radius: 11px;
+
+  background: #fbfcfc;
+
+  color: #26332f;
+
+  font-size: 15px;
+
+  transition: all 0.2s ease;
+}
+
+.setup-form input:hover,
+#budgetForm input:hover {
+  border-color: #b8cec6;
+}
+
+.setup-form input:focus,
+#budgetForm input:focus {
+  outline: none;
+
+  background: #ffffff;
+
+  border-color: #2f6f62;
+
+  box-shadow: 0 0 0 4px rgba(47, 111, 98, 0.1);
+}
+
+.setup-form input::placeholder,
+#budgetForm input::placeholder {
+  color: #a0aaa6;
+}
+
+/* Number input arrows */
+
+#budgetForm input[type="number"]::-webkit-inner-spin-button,
+#budgetForm input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* =========================================================
+   SETUP BUTTON
+========================================================= */
+
+.setup-btn,
+#budgetForm button {
+  width: 100%;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #123c34;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 0 8px 20px rgba(18, 60, 52, 0.15);
+}
+
+.setup-btn:hover,
+#budgetForm button:hover {
+  background: #2f6f62;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(18, 60, 52, 0.2);
+}
+
+/* Remove old fixed expense field if it still exists */
+
+#budgetForm .form-group:nth-child(2) {
+  display: none;
+}
+
+/* Security note */
+
+.setup-note {
+  text-align: center;
+
+  color: #899590;
+
+  font-size: 12px;
+
+  margin-top: 18px;
+}
+
+/* =========================================================
+   5. DASHBOARD PAGE
+========================================================= */
+
+.dashboard-page {
+  min-height: 100vh;
+
+  background: #f4f8f6;
+}
+
+/* =========================================================
+   6. DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header {
+  background: linear-gradient(135deg, #123c34, #1d5146);
+
+  color: #ffffff;
+
+  padding: 30px 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  box-shadow: 0 5px 20px rgba(18, 60, 52, 0.12);
+}
+
+.dashboard-header h1 {
+  font-size: 29px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+}
+
+.dashboard-header p {
+  color: #d6e6e1;
+
+  margin-top: 5px;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   7. DASHBOARD MAIN
+========================================================= */
+
+.dashboard-page main {
+  width: 90%;
+
+  max-width: 1250px;
+
+  margin: 35px auto 50px;
+}
+
+/* =========================================================
+   8. SUMMARY SECTION
+========================================================= */
+
+.summary-section {
+  background: transparent;
+
+  padding: 0;
+
+  margin: 0 0 25px;
+
+  box-shadow: none;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+/* Summary cards */
+
+.summary-card {
+  background: #ffffff;
+
+  border: 1px solid #e3ece8;
+
+  border-radius: 17px;
+
+  padding: 24px;
+
+  min-height: 125px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  box-shadow: 0 8px 25px rgba(20, 50, 44, 0.06);
+
+  transition: all 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 30px rgba(20, 50, 44, 0.09);
+}
+
+/* Card icons */
+
+.card-icon {
+  width: 52px;
+
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #e8f3ef;
+
+  font-size: 24px;
+}
+
+/* Summary label */
+
+.summary-card p {
+  color: #7a8782;
+
+  font-size: 13px;
+
+  margin-bottom: 5px;
+}
+
+/* Summary amount */
+
+.summary-card h2 {
+  color: #123c34;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+/* Different card accents */
+
+.income-card .card-icon {
+  background: #e5f3eb;
+}
+
+.expense-card .card-icon {
+  background: #f8ece8;
+}
+
+.balance-card .card-icon {
+  background: #e7f0f6;
+}
+
+/* =========================================================
+   9. GENERAL DASHBOARD SECTIONS
+========================================================= */
+
+.dashboard-page main > section:not(.summary-section) {
+  background: #ffffff;
+
+  border: 1px solid #e3ece8;
+
+  border-radius: 17px;
+
+  padding: 27px;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 7px 24px rgba(20, 50, 44, 0.055);
+}
+
+/* Section heading */
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  color: #123c34;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+.section-heading p {
+  color: #7b8782;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+/* =========================================================
+   10. FORM LAYOUT
+========================================================= */
+
+.expense-form {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px 20px;
+}
+
+/* Expense form group */
+
+.expense-form .form-group {
+  margin-bottom: 0;
+}
+
+/* Full width bill field */
+
+.expense-form .form-group:last-of-type {
+  grid-column: 1 / -1;
+}
+
+/* Add expense button */
+
+.expense-form .add-expense-btn {
+  grid-column: 1 / -1;
+
+  justify-self: start;
+}
+
+/* =========================================================
+   11. FORM CONTROLS
+========================================================= */
+
+.form-group label {
+  display: block;
+
+  color: #344640;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  min-height: 45px;
+
+  padding: 11px 13px;
+
+  border: 1px solid #d9e4df;
+
+  border-radius: 10px;
+
+  background: #fbfcfc;
+
+  color: #26332f;
+
+  font-size: 14px;
+
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+
+  border-color: #2f6f62;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(47, 111, 98, 0.09);
+}
+
+/* =========================================================
+   12. FILE / BILL INPUT
+========================================================= */
+
+input[type="file"] {
+  padding: 8px;
+
+  cursor: pointer;
+
+  background: #fbfcfc;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+
+  background: #e5f0ec;
+
+  color: #123c34;
+
+  padding: 8px 13px;
+
+  border-radius: 8px;
+
+  margin-right: 10px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.form-group small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #85918c;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   13. MAIN BUTTON
+========================================================= */
+
+.add-expense-btn {
+  border: none;
+
+  background: #123c34;
+
+  color: #ffffff;
+
+  padding: 12px 22px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+
+  box-shadow: 0 6px 15px rgba(18, 60, 52, 0.13);
+}
+
+.add-expense-btn:hover {
+  background: #2f6f62;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   14. BUDGET WARNING
+========================================================= */
+
+.budget-warning {
+  background: #ffffff;
+}
+
+.budget-status-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px 20px;
+
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #f3f8f5, #f8fbfa);
+
+  border: 1px solid #e0ebe6;
+}
+
+.budget-status-icon {
+  width: 47px;
+
+  height: 47px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e4f0eb;
+
+  font-size: 21px;
+}
+
+.budget-status-card h3 {
+  color: #123c34;
+
+  font-size: 17px;
+
+  margin-bottom: 3px;
+}
+
+.budget-status-card p {
+  color: #737f7a;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   15. CATEGORY BUDGET
+========================================================= */
+
+.budget-limit-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr auto;
+
+  align-items: end;
+
+  gap: 18px;
+}
+
+.budget-limit-list {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 15px;
+
+  margin-top: 22px;
+}
+
+.budget-card {
+  background: #f8faf9;
+
+  border: 1px solid #e0eae6;
+
+  border-radius: 13px;
+
+  padding: 18px;
+
+  transition: 0.2s ease;
+}
+
+.budget-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 18px rgba(20, 50, 44, 0.07);
+}
+
+.budget-card h3 {
+  color: #123c34;
+
+  font-size: 16px;
+
+  margin-bottom: 10px;
+}
+
+.budget-card p {
+  color: #727f79;
+
+  font-size: 13px;
+
+  margin-bottom: 4px;
+}
+
+.budget-remaining {
+  color: #2f6f62 !important;
+
+  font-weight: 600;
+}
+
+.budget-exceeded {
+  color: #c44949 !important;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   16. SEARCH AND FILTER
+========================================================= */
+
+.search-filter {
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.search-filter input {
+  flex: 1;
+
+  min-height: 45px;
+
+  padding: 11px 14px;
+
+  border: 1px solid #d9e4df;
+
+  border-radius: 10px;
+
+  background: #fbfcfc;
+
+  font-size: 14px;
+}
+
+.search-filter input:focus {
+  outline: none;
+
+  border-color: #2f6f62;
+
+  box-shadow: 0 0 0 3px rgba(47, 111, 98, 0.09);
+}
+
+.search-filter select {
+  width: 220px;
+
+  min-height: 45px;
+
+  padding: 10px 13px;
+
+  border: 1px solid #d9e4df;
+
+  border-radius: 10px;
+
+  background: #fbfcfc;
+
+  color: #26332f;
+}
+
+/* =========================================================
+   17. EXPENSE TABLE
+========================================================= */
+
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  min-width: 700px;
+}
+
+thead {
+  background: #edf4f1;
+}
+
+th {
+  padding: 14px 15px;
+
+  text-align: left;
+
+  color: #456058;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  border-bottom: 1px solid #dfe9e5;
+}
+
+th:first-child {
+  border-radius: 9px 0 0 9px;
+}
+
+th:last-child {
+  border-radius: 0 9px 9px 0;
+}
+
+td {
+  padding: 14px 15px;
+
+  color: #53615c;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid #edf1ef;
+}
+
+tbody tr {
+  transition: 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f8fbfa;
+}
+
+/* =========================================================
+   18. DELETE BUTTON
+========================================================= */
+
+.delete-btn {
+  border: none;
+
+  background: #f9e8e8;
+
+  color: #c44949;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #f2d4d4;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   19. BILL BUTTON
+========================================================= */
+
+.bill-btn {
+  border: none;
+
+  background: #2f6f62;
+
+  color: #ffffff;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.bill-btn:hover {
+  background: #123c34;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   20. BILL MODAL
+========================================================= */
+
+.bill-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  background: rgba(10, 30, 26, 0.78);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  backdrop-filter: blur(4px);
+}
+
+.bill-preview {
+  max-width: 90%;
+
+  max-height: 85vh;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  padding: 5px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.close-bill-btn {
+  position: absolute;
+
+  top: 22px;
+
+  right: 25px;
+
+  width: 43px;
+
+  height: 43px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #123c34;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.close-bill-btn:hover {
+  background: #e8f0ed;
+
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   21. MONTHLY HISTORY
+========================================================= */
+
+.monthly-history {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.history-card {
+  padding: 18px;
+
+  background: linear-gradient(145deg, #f7faf9, #ffffff);
+
+  border: 1px solid #e0eae6;
+
+  border-radius: 13px;
+
+  transition: 0.2s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 18px rgba(20, 50, 44, 0.06);
+}
+
+.history-card h3 {
+  color: #123c34;
+
+  font-size: 15px;
+
+  margin-bottom: 8px;
+}
+
+.history-card p {
+  color: #2f6f62;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   22. CHART
+========================================================= */
+
+.chart-header {
+  margin-bottom: 20px;
+}
+
+.chart-header h2 {
+  color: #123c34;
+
+  font-size: 21px;
+}
+
+.chart-header p {
+  color: #7b8490;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+.chart-container {
+  position: relative;
+
+  width: 100%;
+
+  height: 350px;
+
+  padding: 10px;
+}
+
+/* =========================================================
+   23. FOOTER
+========================================================= */
+
+footer {
+  width: 100%;
+
+  padding: 25px 20px;
+
+  text-align: center;
+
+  background: #123c34;
+
+  color: #d7e5e0;
+
+  font-size: 12px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* =========================================================
+   24. EMPTY MESSAGE
+========================================================= */
+
+.empty-message {
+  text-align: center;
+
+  color: #8a9590;
+
+  padding: 25px;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   25. SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf3f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b6c9c2;
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8da79d;
+}
+
+/* =========================================================
+   26. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .landing-container {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+  }
+
+  .landing-image {
+    min-height: 250px;
+  }
+
+  .landing-content {
+    padding: 50px;
+  }
+
+  .summary-section {
+    grid-template-columns: 1fr;
+  }
+
+  .budget-limit-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .budget-limit-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .monthly-history {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   27. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  body:has(#budgetForm) {
+    padding: 15px;
+  }
+
+  /* ---------- LANDING ---------- */
+
+  .landing-page {
+    padding: 15px;
+  }
+
+  .landing-container {
+    border-radius: 20px;
+  }
+
+  .landing-content {
+    padding: 40px 25px;
+  }
+
+  .landing-content h1 {
+    font-size: 35px;
+  }
+
+  .landing-content p {
+    font-size: 14px;
+  }
+
+  .landing-image {
+    min-height: 200px;
+  }
+
+  .landing-icon {
+    font-size: 80px;
+  }
+
+  /* ---------- SETUP ---------- */
+
+  .setup-page {
+    padding: 15px;
+  }
+
+  .setup-container {
+    padding: 32px 22px;
+
+    border-radius: 18px;
+  }
+
+  .setup-container h1 {
+    font-size: 27px;
+  }
+
+  /* ---------- DASHBOARD HEADER ---------- */
+
+  .dashboard-header {
+    padding: 23px 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 23px;
+  }
+
+  .dashboard-header p {
+    font-size: 12px;
+  }
+
+  /* ---------- MAIN ---------- */
+
+  .dashboard-page main {
+    width: 94%;
+
+    margin-top: 20px;
+  }
+
+  /* ---------- SUMMARY ---------- */
+
+  .summary-section {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .summary-card {
+    min-height: 105px;
+
+    padding: 19px;
+  }
+
+  .summary-card h2 {
+    font-size: 23px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+
+  .dashboard-page main > section:not(.summary-section) {
+    padding: 19px;
+
+    border-radius: 14px;
+  }
+
+  /* ---------- SECTION HEADING ---------- */
+
+  .section-heading {
+    display: block;
+  }
+
+  /* ---------- EXPENSE FORM ---------- */
+
+  .expense-form {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .expense-form .form-group {
+    margin-bottom: 17px;
+  }
+
+  .expense-form .form-group:last-of-type {
+    grid-column: auto;
+  }
+
+  .expense-form .add-expense-btn {
+    grid-column: auto;
+
+    width: 100%;
+  }
+
+  /* ---------- CATEGORY BUDGET ---------- */
+
+  .budget-limit-form {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .budget-limit-form button {
+    width: 100%;
+  }
+
+  .budget-limit-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- SEARCH ---------- */
+
+  .search-filter {
+    flex-direction: column;
+  }
+
+  .search-filter select {
+    width: 100%;
+  }
+
+  /* ---------- HISTORY ---------- */
+
+  .monthly-history {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- CHART ---------- */
+
+  .chart-container {
+    height: 280px;
+
+    padding: 0;
+  }
+
+  /* ---------- BILL ---------- */
+
+  .bill-modal {
+    padding: 15px;
+  }
+
+  .bill-preview {
+    max-width: 96%;
+
+    max-height: 80vh;
+  }
+
+  .close-bill-btn {
+    top: 12px;
+
+    right: 12px;
+
+    width: 40px;
+
+    height: 40px;
+  }
+
+  /* ---------- TABLE ---------- */
+
+  .table-container {
+    margin-left: -3px;
+
+    margin-right: -3px;
+  }
+}
+
+/* =========================================================
+   28. VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .landing-content h1 {
+    font-size: 30px;
+  }
+
+  .setup-container {
+    padding: 27px 18px;
+  }
+
+  .setup-container h1 {
+    font-size: 24px;
+  }
+
+  .summary-card h2 {
+    font-size: 21px;
+  }
+}
