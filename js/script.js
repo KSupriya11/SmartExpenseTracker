@@ -1,12 +1,3 @@
-/* =========================================================
-   SMART EXPENSE TRACKER
-   COMPLETE SCRIPT.JS
-========================================================= */
-
-/* =========================================================
-   1. LOAD DATA FROM LOCAL STORAGE
-========================================================= */
-
 let monthlyIncome = Number(localStorage.getItem("monthlyIncome")) || 0;
 
 let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
